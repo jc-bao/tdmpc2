@@ -17,7 +17,6 @@ dependencies:
     - glfw
     - kornia
     - termcolor
-    - gym==0.21.0
     - moviepy
     - ffmpeg
     - imageio

@@ -12,7 +12,8 @@ from termcolor import colored
 from common.parser import parse_cfg
 from common.seed import set_seed
 from envs import make_env
-from tdmpc2 import TDMPC2
+# from tdmpc2 import TDMPC2
+from tdmpc2_covo import TDMPC2CoVO
 
 torch.backends.cudnn.benchmark = True
 
@@ -54,7 +55,7 @@ def evaluate(cfg: dict):
 	env = make_env(cfg)
 
 	# Load agent
-	agent = TDMPC2(cfg)
+	agent = TDMPC2CoVO(cfg)
 	assert os.path.exists(cfg.checkpoint), f'Checkpoint {cfg.checkpoint} not found! Must be a valid filepath.'
 	agent.load(cfg.checkpoint)
 	
